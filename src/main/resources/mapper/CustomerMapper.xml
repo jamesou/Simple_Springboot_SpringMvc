@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jamesou.springbootmvc.mapper.CustomerMapper">
+
+
+    <select id="SelectAll" resultType="com.jamesou.springbootmvc.bean.Customer">
+        select * from customer
+    </select>
+
+    <select id="SelectByCount" resultType="Integer">
+        select count(*) from customer
+    </select>
+
+    <select id="SelectById" parameterType="String" resultType="com.jamesou.springbootmvc.bean.Customer">
+        select * from customer where cno = #{cno}
+    </select>
+
+    <insert id="InsertByCustomer" parameterType="com.jamesou.springbootmvc.bean.Customer">
+        insert into customer(cno,cname,telephone) values(#{cno},#{cname},#{telephone})
+    </insert>
+
+</mapper>

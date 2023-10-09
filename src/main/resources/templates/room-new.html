@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>客房新增</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="/asserts/css/me.css">
+</head>
+<body>
+    <nav class="ui inverted attached segment">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <div class="menu">
+                    Welcome <p2 class="ui teal header" text="jamesou" th:text="${session.loginuser.username}">jamesou</p2> <a href="/loginout" class="ui teal item">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="m-padded-tb-large m-container-small">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <!--左-->
+                <div class="five wide column">
+                    <h2><a href="#" th:href="@{/success}" class="item m-mobile"><i class="home icon"></i>Personal Info</a></h2><br>
+                    <h2><a href="#" th:href="@{/certification}" class="item m-mobile"><i class="home icon"></i>Certification</a></h2><br>
+                    <h2><a href="#" th:href="@{/searchroom}" class="item m-mobile "><i class="home icon"></i>Rooms</a></h2><br>
+                    <h2><a href="#" th:href="@{/searchcustomer}" class="item m-mobile "><i class="home icon"></i>Customers</a></h2><br>
+                    <h2><a href="#" th:href="@{/searchinfo}" class="item m-mobile "><i class="home icon"></i>Orders</a></h2><br>
+                    <h2><a href="#" th:href="@{/create}" class="item m-mobile "><i class="home icon"></i>Check In</a></h2><br>
+                </div>
+                <!--右-->
+
+                <div class="eleven wide column">
+                    <div class="ui teal segment">
+                        <h2 ><i class="home icon"></i>客房新增</h2>
+                        <div class="m-padded-tb-large m-container">
+                            <div class="ui container">
+                                <form action="#" method="post"    th:action="@{/roomnew}" class="ui  form">
+                                    <div class="required field">
+                                        <div class="ui left labeled input">
+                                            <label class="ui teal basic label">Room No.</label>
+                                            <input type="text" name="rno"  placeholder="Room No." >
+                                        </div>
+                                        <div class="ui left labeled input">
+                                            <label class="ui teal basic label">Room Type</label>
+                                            <input type="text" name="rname"  placeholder="Room Type" >
+                                        </div>
+                                        <div class="ui left labeled input">
+                                            <label class="ui teal basic label">Room Price</label>
+                                            <input type="text" name="rprice"  placeholder="Room Price" >
+                                        </div>
+                                    </div>
+
+                                    <div class="ui right aligned container">
+                                        <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                                        <button  class="ui  teal submit button">提交</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+</body>
+</html>
